@@ -20,8 +20,9 @@ export class PokemonCardComponent implements OnInit {
     this.httpClient.get<any>(this.cardData.url).subscribe(response => {
       this.pokemon = {
         name: response.name,
-        type: this.translateTypeName(
-          Response.types[0].type.name
+        type: response.types[0].type.name,
+        polishType: this.translateTypeName(
+          response.types[0].type.name
         ),
         imageUrl: response.sprites.front_default
       };
@@ -33,10 +34,41 @@ export class PokemonCardComponent implements OnInit {
         return 'normalny';
       case 'fire':
         return 'ognisty';
+      case 'water':
+        return 'wodny';
+      case 'electric':
+        return 'elektryczny';
+      case 'grass':
+        return 'trawiasty';
+      case 'ice':
+        return 'lodowy';
+      case 'fighting':
+        return 'walczący';
+      case 'poison':
+        return 'trujący';
+      case 'ground':
+        return 'ziemnisty';
+      case 'flying':
+        return 'latający';
+      case 'psychic':
+        return 'psychiczny';
+      case 'bug':
+        return 'owadowy';
+      case 'rock':
+        return 'skalny';
+      case 'ghost':
+        return 'duchowy';
+      case 'dragon':
+        return 'smoczy';
+      case 'dark':
+        return 'mroczny';
+      case 'steel':
+        return 'stalowy';
+      case 'fairy':
+        return 'baśniowy';
       default:
         return 'typ nieobsługiwany';
     }
   }
 
-  
 }
