@@ -11,11 +11,19 @@
                 <td>{{ stat.value }}</td>
             </tr>
         </table>
+        <div class="centered">
+            <button mat-raised-button routerLink="/pokemons" color="primary" class="pokemon-font">BACK</button>
+        </div>
     </mat-card-content>
+    
 </mat-card>
 
 <mat-card class="centered" *ngIf="!pokemonExists">
     <mat-card-content class="pokemon-font">
-        NIESTETY NIE ZNALEZIONO POKEMONA O NAZWIE {{ inputPokemonName }}
+        NIESTETY NIE ZNALEZIONO POKEMONA O NAZWIE {{ inputPokemonName }}<br />
+        <div class="centered">
+            <button mat-raised-button routerLink="/pokemons" color="primary" class="pokemon-font">BACK</button>
+        </div>
     </mat-card-content>
+    
 </mat-card>
