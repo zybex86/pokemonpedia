@@ -5,7 +5,7 @@
     "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
-    "tart_url": "https://zybex86.github.io/pokemonpedia/",
+    "start_url": "https://zybex86.github.io/pokemonpedia/",
     "icons": [
         {
             "src": "assets/icons/icon-72x72.png",
