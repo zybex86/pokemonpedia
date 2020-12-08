@@ -13,10 +13,13 @@ export class PokemonCardComponent implements OnInit {
   cardData: PokemonCard;
 
   pokemon: Pokemon;
-  defaultImageSrc = '../assets/pokeball.png';
+  isLoading = false;
+
+  defaultImageSrc = '../../assets/pokeball.png';
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.httpClient.get<any>(this.cardData.url).subscribe(response => {
       this.pokemon = {
         name: response.name,
@@ -28,6 +31,9 @@ export class PokemonCardComponent implements OnInit {
       };
     });
   }
+
+  imageLoaded() { this.isLoading = false; }
+
   translateTypeName(type: string): string {
     switch (type) {
       case 'normal':
